@@ -1,0 +1,6 @@
+Dms Sans
+bold - title
+medium,regular-body 
+navy-#00203F
+light-green-#ADEFD1
+home page color - linear-gradient(135deg, #ADEFD1 55.21%, #00EAFF 94.27%);
