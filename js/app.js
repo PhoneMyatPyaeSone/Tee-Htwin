@@ -1,3 +1,54 @@
+$(".navbar-toggler").click(function (){
+    let result = $(".navbar-collapse").hasClass("show");
+    if(!result){
+        $(".menu-icon").toggleClass("fas fa-times").toggleClass("fa fa-bars");
+        $(".navbar-collapse").removeClass("show");
+    }else{
+        $(".menu-icon").toggleClass("fa fa-bars").toggleClass("fas fa-times");
+        $(".navbar-collapse").addClass("show");
+    }
+});
+
+var waypoints = $('#about').waypoint(function(direction) {
+    if(direction = "down"){
+        $(".site-nav").toggleClass("stuck");
+        setActive('home')
+    }else{
+        $(".site-nav").toggleClass("stuck")
+    }
+}, {
+    offset: "80%"
+})
+
+function setActive(current){
+    $(`.nav-link`).removeClass("active");
+    $(`.nav-link[href='#${current}']`).addClass("active");
+}
+
+function navScroll(){
+    let currentSection = $("div[id]");
+    currentSection.waypoint(function (direction) {
+        if(direction = "down"){
+            let currentSectionId =$(this.element).attr('id');
+            console.log(currentSectionId);
+            setActive(currentSectionId);
+        }
+    },{
+        offset:'150px'
+    });
+
+    currentSection.waypoint(function (direction) {
+        if(direction = "up"){
+            let currentSectionId =$(this.element).attr('id');
+            setActive(currentSectionId);
+        }
+    },{
+        offset:'150px'
+    });
+}
+
+navScroll();
+
 $('.member-box').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -73,3 +124,35 @@ allPath.forEach(currentPath=>{
 document.querySelector("[name='Yangon']").classList.add("active");
 currentPlace.innerText = "Yangon";
 currentMember.innerText = place["Yangon"];
+
+ScrollReveal({
+    origin: "top",
+    distance: "30px",
+    duration: 1500,
+    reset: true
+}).reveal(".top",{
+    interval : 200
+});
+
+ScrollReveal({
+    origin: "left",
+    distance: "30px",
+    duration: 1500,
+    reset: true
+}).reveal(".left",{
+    interval : 200
+});
+
+ScrollReveal({
+    origin: "right",
+    distance: "20px",
+    duration: 1500,
+    reset: true
+}).reveal(".right",{
+    interval : 200
+});
+
+$('.counter').counterUp({
+    delay: 10,
+    time: 3000
+});
