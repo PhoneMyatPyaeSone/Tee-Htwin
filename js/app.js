@@ -30,7 +30,6 @@ function navScroll(){
     currentSection.waypoint(function (direction) {
         if(direction = "down"){
             let currentSectionId =$(this.element).attr('id');
-            console.log(currentSectionId);
             setActive(currentSectionId);
         }
     },{
