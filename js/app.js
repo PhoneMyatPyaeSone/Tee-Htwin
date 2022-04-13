@@ -128,7 +128,8 @@ ScrollReveal({
     origin: "top",
     distance: "30px",
     duration: 1500,
-    reset: true
+    reset: true,
+    delay: 500
 }).reveal(".top",{
     interval : 200
 });
@@ -137,7 +138,8 @@ ScrollReveal({
     origin: "left",
     distance: "30px",
     duration: 1500,
-    reset: true
+    reset: true,
+    delay: 500
 }).reveal(".left",{
     interval : 200
 });
@@ -146,7 +148,8 @@ ScrollReveal({
     origin: "right",
     distance: "20px",
     duration: 1500,
-    reset: true
+    reset: true,
+    delay: 500
 }).reveal(".right",{
     interval : 200
 });
